@@ -31,7 +31,7 @@ is stored **locally in your browser** — no account, no server, fully private.
 ## Run locally
 
 ```bash
-cd gateway-app
+cd turiya-app
 npm install
 npm run dev
 ```
