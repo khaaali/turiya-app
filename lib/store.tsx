@@ -10,7 +10,7 @@ import {
 } from "react";
 import type { AppData, Profile, Session } from "./types";
 import { TAPES, TOTAL_TAPES } from "./tapes";
-import { getSyncKey, pushToCloud } from "./sync";
+import { getSyncKey, pushToCloud, pullFromCloud } from "./sync";
 
 const STORAGE_KEY = "turiya-v1";
 
@@ -45,22 +45,47 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<AppData>(EMPTY);
   const [ready, setReady] = useState(false);
 
-  // Load once on mount (client only).
+  // Load once on mount — local first, then merge with cloud if sync key exists.
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as AppData;
-        setData({
-          profiles: parsed.profiles ?? [],
-          activeProfileId: parsed.activeProfileId ?? null,
-          sessions: parsed.sessions ?? [],
-        });
+    async function load() {
+      let local: AppData = EMPTY;
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw) as AppData;
+          local = {
+            profiles: parsed.profiles ?? [],
+            activeProfileId: parsed.activeProfileId ?? null,
+            sessions: parsed.sessions ?? [],
+          };
+        }
+      } catch { /* ignore corrupt storage */ }
+
+      const key = getSyncKey();
+      if (key) {
+        try {
+          const remote = (await pullFromCloud(key)) as AppData | null;
+          if (remote && Array.isArray(remote.profiles) && Array.isArray(remote.sessions)) {
+            // Merge: union of sessions, remote profiles win on conflict
+            const allSessions = [...remote.sessions];
+            const localOnlyIds = new Set(local.sessions.map((s) => s.id));
+            remote.sessions.forEach((s) => localOnlyIds.delete(s.id));
+            local.sessions.filter((s) => localOnlyIds.has(s.id)).forEach((s) => allSessions.push(s));
+            setData({
+              profiles: remote.profiles,
+              activeProfileId: remote.activeProfileId ?? remote.profiles[0]?.id ?? null,
+              sessions: allSessions,
+            });
+            setReady(true);
+            return;
+          }
+        } catch { /* network unavailable — fall back to local */ }
       }
-    } catch {
-      /* ignore corrupt storage */
+
+      setData(local);
+      setReady(true);
     }
-    setReady(true);
+    load();
   }, []);
 
   // Persist locally and push to cloud on change.
