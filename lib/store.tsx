@@ -10,6 +10,7 @@ import {
 } from "react";
 import type { AppData, Profile, Session } from "./types";
 import { TAPES, TOTAL_TAPES } from "./tapes";
+import { getSyncKey, pushToCloud } from "./sync";
 
 const STORAGE_KEY = "turiya-v1";
 
@@ -62,7 +63,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setReady(true);
   }, []);
 
-  // Persist on change (after initial load).
+  // Persist locally and push to cloud on change.
   useEffect(() => {
     if (!ready) return;
     try {
@@ -70,6 +71,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     } catch {
       /* storage full / unavailable */
     }
+    const key = getSyncKey();
+    if (key) pushToCloud(key, data);
   }, [data, ready]);
 
   const addProfile = useCallback((name: string, intention: string) => {

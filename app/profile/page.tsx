@@ -1,8 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useStore, computeProgress } from "@/lib/store";
 import { PageHeader } from "@/components/ui";
+import {
+  getSyncKey, setSyncKey, removeSyncKey, generateSyncKey,
+  pushToCloud, pullFromCloud,
+} from "@/lib/sync";
+import type { AppData } from "@/lib/types";
 
 export default function Profiles() {
   const {
@@ -23,7 +28,51 @@ export default function Profiles() {
   const fileRef = useRef<HTMLInputElement>(null);
   const [msg, setMsg] = useState<string | null>(null);
 
+  // Sync state
+  const [syncKey, setSyncKeyState] = useState<string | null>(null);
+  const [syncStatus, setSyncStatus] = useState<string | null>(null);
+  const [syncInput, setSyncInput] = useState("");
+
+  useEffect(() => { setSyncKeyState(getSyncKey()); }, []);
+
   if (!ready) return null;
+
+  async function enableSync() {
+    const key = generateSyncKey();
+    setSyncKey(key);
+    setSyncKeyState(key);
+    const ok = await pushToCloud(key, data);
+    setSyncStatus(ok ? "Sync enabled. Copy your key to use on other devices." : "Failed to connect. Try again.");
+    setTimeout(() => setSyncStatus(null), 5000);
+  }
+
+  async function connectSync() {
+    const key = syncInput.trim();
+    if (!key) return;
+    setSyncStatus("Connecting...");
+    const remote = await pullFromCloud(key);
+    if (!remote) { setSyncStatus("Key not found or no data yet."); return; }
+    setSyncKey(key);
+    setSyncKeyState(key);
+    importJSON(JSON.stringify(remote));
+    setSyncStatus("Connected! Data loaded from cloud.");
+    setSyncInput("");
+    setTimeout(() => setSyncStatus(null), 5000);
+  }
+
+  function disableSync() {
+    removeSyncKey();
+    setSyncKeyState(null);
+    setSyncStatus("Sync disabled.");
+    setTimeout(() => setSyncStatus(null), 3000);
+  }
+
+  async function pushNow() {
+    if (!syncKey) return;
+    const ok = await pushToCloud(syncKey, data);
+    setSyncStatus(ok ? "Pushed to cloud." : "Push failed.");
+    setTimeout(() => setSyncStatus(null), 3000);
+  }
 
   function create(e: React.FormEvent) {
     e.preventDefault();
@@ -175,8 +224,7 @@ export default function Profiles() {
           <div className="card space-y-3 p-5">
             <h3 className="font-serif text-lg text-white">Your data</h3>
             <p className="text-xs text-slate-400">
-              All sessions live in this browser only. Back them up or move them
-              to another device with export / import.
+              Back up or move data to another device with export / import.
             </p>
             <div className="flex gap-2">
               <button onClick={download} className="btn-ghost flex-1 text-xs">
@@ -197,6 +245,69 @@ export default function Profiles() {
               />
             </div>
             {msg && <p className="text-xs text-aura-300">{msg}</p>}
+          </div>
+
+          {/* Cloud Sync */}
+          <div className="card space-y-4 p-5">
+            <div className="flex items-center justify-between">
+              <h3 className="font-serif text-lg text-white">Cloud sync</h3>
+              {syncKey && (
+                <span className="rounded-full bg-green-500/20 px-2 py-0.5 text-[10px] text-green-300">
+                  Active
+                </span>
+              )}
+            </div>
+
+            {syncKey ? (
+              <>
+                <p className="text-xs text-slate-400">
+                  Your sync key — paste this on any other device to sync your data.
+                </p>
+                <div className="flex items-center gap-2 rounded-lg bg-ink-soft px-3 py-2">
+                  <code className="flex-1 break-all text-[10px] text-aura-300">{syncKey}</code>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(syncKey)}
+                    className="shrink-0 text-xs text-slate-400 hover:text-aura-300"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={pushNow} className="btn-ghost flex-1 text-xs">
+                    Push now
+                  </button>
+                  <button onClick={disableSync} className="text-xs text-slate-500 hover:text-red-400">
+                    Disable
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="text-xs text-slate-400">
+                  Sync your profiles and sessions across all your devices via Cloudflare.
+                </p>
+                <button onClick={enableSync} className="btn-primary w-full text-xs">
+                  Enable cloud sync
+                </button>
+                <div className="relative flex items-center gap-2">
+                  <div className="h-px flex-1 bg-ink-line" />
+                  <span className="text-xs text-slate-500">or join existing</span>
+                  <div className="h-px flex-1 bg-ink-line" />
+                </div>
+                <div className="flex gap-2">
+                  <input
+                    className="input flex-1 text-xs"
+                    placeholder="Paste sync key"
+                    value={syncInput}
+                    onChange={(e) => setSyncInput(e.target.value)}
+                  />
+                  <button onClick={connectSync} className="btn-ghost px-3 text-xs">
+                    Connect
+                  </button>
+                </div>
+              </>
+            )}
+            {syncStatus && <p className="text-xs text-aura-300">{syncStatus}</p>}
           </div>
         </aside>
       </div>

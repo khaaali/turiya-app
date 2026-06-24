@@ -9,7 +9,6 @@ const LINKS = [
   { href: "/waves", label: "Library" },
   { href: "/synthesis", label: "Synthesis" },
   { href: "/journal", label: "Journal" },
-  { href: "/audio", label: "Audio" },
   { href: "/profile", label: "Profiles" },
 ];
 
