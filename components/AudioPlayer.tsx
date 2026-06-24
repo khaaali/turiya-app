@@ -49,6 +49,8 @@ export function AudioPlayer({ tape }: { tape: Tape }) {
     };
   }, [resolved, configured]);
 
+  const showPlayer = configured ? !errored : localExists === true;
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -75,7 +77,7 @@ export function AudioPlayer({ tape }: { tape: Tape }) {
       audio.removeEventListener("ended", onEnded);
       audio.removeEventListener("error", onError);
     };
-  }, []);
+  }, [resolved?.url, showPlayer]);
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -104,7 +106,6 @@ export function AudioPlayer({ tape }: { tape: Tape }) {
 
   if (!ready || !resolved) return null;
 
-  const showPlayer = configured ? !errored : localExists === true;
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
