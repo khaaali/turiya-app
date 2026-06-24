@@ -1,14 +1,68 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { WAVES, tapesByWave } from "@/lib/tapes";
 import { useStore, computeProgress } from "@/lib/store";
 import { PageHeader, ProgressBar, FocusBadge } from "@/components/ui";
 import { toRoman } from "@/lib/format";
 
+function WaveNav({ activeWave }: { activeWave: number }) {
+  const stripRef = useRef<HTMLDivElement>(null);
+  const activeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }, [activeWave]);
+
+  const jump = (n: number) => {
+    document.getElementById(`wave-${n}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <div className="sticky top-14 z-20 -mx-4 mb-8 border-b border-ink-line bg-ink/90 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6">
+      <div ref={stripRef} className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+        {WAVES.map((w) => {
+          const active = activeWave === w.number;
+          return (
+            <button
+              key={w.number}
+              ref={active ? activeRef : null}
+              onClick={() => jump(w.number)}
+              className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                active
+                  ? "bg-aura-600/40 text-aura-200 ring-1 ring-aura-500/50"
+                  : "text-slate-400 hover:text-aura-300"
+              }`}
+            >
+              {toRoman(w.number)} · {w.title}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Library() {
   const { ready, sessionsForActive } = useStore();
   const completed = ready ? computeProgress(sessionsForActive()).completedTapeIds : new Set<string>();
+  const [activeWave, setActiveWave] = useState(1);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    WAVES.forEach((w) => {
+      const el = document.getElementById(`wave-${w.number}`);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveWave(w.number); },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <>
@@ -17,6 +71,8 @@ export default function Library() {
         title="The Eight Waves"
         subtitle="46 exercises that carry you from deep physical relaxation (Focus 10) all the way to union with the Absolute. Work them in order, and repeat any tape until it feels like home."
       />
+
+      <WaveNav activeWave={activeWave} />
 
       <div className="space-y-10">
         {WAVES.map((w) => {
