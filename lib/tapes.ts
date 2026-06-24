@@ -96,7 +96,7 @@ export const TAPES: Tape[] = [
     title: "Orientation",
     focus: "Focus 3 (binaural) → Focus 10 preview",
     duration: 35,
-    audioFile: "Wave I - Discovery/CD1 - 1 - Orientation.flac",
+    audioFile: "Wave I - Discovery/CD1 - 1 - Orientation.mp3",
     summary:
       "Your introduction to the binaural-beat audio. You learn the Energy Conversion Box, the Resonant Tuning breath, the Resonant Energy Balloon (REBAL), and the Affirmation — the core tools every later exercise rests on.",
     technique: [
@@ -126,7 +126,7 @@ export const TAPES: Tape[] = [
     title: "Introduction to Focus 10",
     focus: "Focus 10 — Mind Awake / Body Asleep",
     duration: 35,
-    audioFile: "Wave I - Discovery/CD1 - 2 - Introduction to Focus 10.flac",
+    audioFile: "Wave I - Discovery/CD1 - 2 - Introduction to Focus 10.mp3",
     summary:
       "The single most important state in the entire program. You learn to let the body fall completely asleep while the mind stays clear, awake, and alert.",
     technique: [
@@ -154,7 +154,7 @@ export const TAPES: Tape[] = [
     title: "Advanced Focus 10",
     focus: "Focus 10",
     duration: 35,
-    audioFile: "Wave I - Discovery/CD2 - 3 - Advanced Focus 10.flac",
+    audioFile: "Wave I - Discovery/CD2 - 3 - Advanced Focus 10.mp3",
     summary:
       "Deepening and stabilizing Focus 10 and learning to move into and hold it more quickly and on your own, with less reliance on verbal guidance.",
     technique: [
@@ -182,7 +182,7 @@ export const TAPES: Tape[] = [
     title: "Release and Recharge",
     focus: "Focus 10",
     duration: 35,
-    audioFile: "Wave I - Discovery/CD2 - 4 - Release and Recharge.flac",
+    audioFile: "Wave I - Discovery/CD2 - 4 - Release and Recharge.mp3",
     summary:
       "Emotional housekeeping. You deliberately release held fears, anxieties and tensions, then recharge with fresh energy — clearing the channel for deeper work.",
     technique: [
@@ -210,7 +210,7 @@ export const TAPES: Tape[] = [
     title: "Exploration, Sleep",
     focus: "Focus 10",
     duration: 45,
-    audioFile: "Wave I - Discovery/CD3 - 5 - Exploration, Sleep.flac",
+    audioFile: "Wave I - Discovery/CD3 - 5 - Exploration, Sleep.mp3",
     summary:
       "Free exploration of Focus 10 followed by a guided transition into restorative sleep — learning to use the state to improve the quality of your rest.",
     technique: [
@@ -237,7 +237,7 @@ export const TAPES: Tape[] = [
     title: "Free Flow 10",
     focus: "Focus 10",
     duration: 35,
-    audioFile: "Wave I - Discovery/CD3 - 6 - Free Flow 10.flac",
+    audioFile: "Wave I - Discovery/CD3 - 6 - Free Flow 10.mp3",
     summary:
       "Extended unstructured time in Focus 10 to consolidate everything in Wave I and discover what the state offers you personally.",
     technique: [
@@ -266,7 +266,7 @@ export const TAPES: Tape[] = [
     title: "Introduction to Focus 12",
     focus: "Focus 12 — Expanded Awareness",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD1 - 1 - Introduction to Focus 12.flac",
+    audioFile: "Wave II - Threshold/CD1 - 1 - Introduction to Focus 12.mp3",
     summary:
       "Stepping up from Focus 10 into Focus 12, a state of expanded awareness where perception reaches beyond the ordinary physical senses.",
     technique: [
@@ -294,7 +294,7 @@ export const TAPES: Tape[] = [
     title: "Problem Solving",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD1 - 2 - Problem Solving.flac",
+    audioFile: "Wave II - Threshold/CD1 - 2 - Problem Solving.mp3",
     summary:
       "Using expanded awareness to solve real problems — presenting a question to your deeper mind and receiving insight beyond ordinary reasoning.",
     technique: [
@@ -322,7 +322,7 @@ export const TAPES: Tape[] = [
     title: "One-Month Patterning",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD2 - 3 - One-Month Patterning.flac",
+    audioFile: "Wave II - Threshold/CD2 - 3 - One-Month Patterning.mp3",
     summary:
       "Patterning is conscious manifestation: in expanded awareness you vividly picture and emotionally feel a desired outcome for the coming month, planting it as a pattern.",
     technique: [
@@ -350,7 +350,7 @@ export const TAPES: Tape[] = [
     title: "Color Breathing",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD2 - 4 - Color Breathing.flac",
+    audioFile: "Wave II - Threshold/CD2 - 4 - Color Breathing.mp3",
     summary:
       "An energy and healing technique: you breathe in specific colors and direct them through the body to vitalize, balance, and heal.",
     technique: [
@@ -378,7 +378,7 @@ export const TAPES: Tape[] = [
     title: "Energy Bar Tool",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD3 - 5 - Energy Bar Tool.flac",
+    audioFile: "Wave II - Threshold/CD3 - 5 - Energy Bar Tool.mp3",
     summary:
       "You build a tool of pure energy — a glowing bar you charge, shape, and use to direct energy for healing, clearing, and exploration.",
     technique: [
@@ -406,7 +406,7 @@ export const TAPES: Tape[] = [
     title: "Living Body Map",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave II - Threshold/CD3 - 6 - Living Body Map.flac",
+    audioFile: "Wave II - Threshold/CD3 - 6 - Living Body Map.mp3",
     summary:
       "A diagnostic and healing exercise: you create an inner map of your body to sense its condition and direct energy toward health and balance.",
     technique: [
@@ -436,7 +436,7 @@ export const TAPES: Tape[] = [
     title: "Lift Off",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD1 - 1 - Lift Off.flac",
+    audioFile: "Wave III - Freedom/CD1 - 1 - Lift Off.mp3",
     summary:
       "Preparing for non-physical movement: you practice the sensations of lifting away from the body while remaining safe and grounded in Focus 12.",
     technique: [
@@ -464,7 +464,7 @@ export const TAPES: Tape[] = [
     title: "Remote Viewing",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD1 - 2 - Remote Viewing.flac",
+    audioFile: "Wave III - Freedom/CD1 - 2 - Remote Viewing.mp3",
     summary:
       "Perceiving a distant or hidden target with the mind. You learn to send awareness to a location and gather impressions without physical presence.",
     technique: [
@@ -492,7 +492,7 @@ export const TAPES: Tape[] = [
     title: "Vectors",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD2 - 3 - Vectors.flac",
+    audioFile: "Wave III - Freedom/CD2 - 3 - Vectors.mp3",
     summary:
       "Learning to aim awareness with precision. A vector is a directed line of intention you use to point your perception toward any chosen target.",
     technique: [
@@ -520,7 +520,7 @@ export const TAPES: Tape[] = [
     title: "Five Questions",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD2 - 4 - Five Questions.flac",
+    audioFile: "Wave III - Freedom/CD2 - 4 - Five Questions.mp3",
     summary:
       "A structured dialogue with your higher self or Total Self. You pose five life questions in expanded awareness and receive guidance.",
     technique: [
@@ -548,7 +548,7 @@ export const TAPES: Tape[] = [
     title: "Energy Food",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD3 - 5 - Energy Food.flac",
+    audioFile: "Wave III - Freedom/CD3 - 5 - Energy Food.mp3",
     summary:
       "Learning to draw nourishment directly from energy — taking in vitality from your surroundings and the wider energy field to recharge yourself.",
     technique: [
@@ -576,7 +576,7 @@ export const TAPES: Tape[] = [
     title: "First Stage Separation",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave III - Freedom/CD3 - 6 - First Stage Separation.flac",
+    audioFile: "Wave III - Freedom/CD3 - 6 - First Stage Separation.mp3",
     summary:
       "A gentle first taste of separating awareness from the physical body — extending a hand or part of yourself beyond your physical form.",
     technique: [
@@ -606,7 +606,7 @@ export const TAPES: Tape[] = [
     title: "One Year Patterning",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD1 - 1 - One Year Patterning.flac",
+    audioFile: "Wave IV - Adventure/CD1 - 1 - One Year Patterning.mp3",
     summary:
       "Long-range manifestation. You pattern a vision for the year ahead — bigger and farther out than the one-month patterning of Wave II.",
     technique: [
@@ -634,7 +634,7 @@ export const TAPES: Tape[] = [
     title: "Five Messages",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD1 - 2 - Five Messages.flac",
+    audioFile: "Wave IV - Adventure/CD1 - 2 - Five Messages.mp3",
     summary:
       "Receiving rather than asking. You open to five messages from your higher self or guides — guidance that comes unbidden when you make space for it.",
     technique: [
@@ -662,7 +662,7 @@ export const TAPES: Tape[] = [
     title: "Free Flow 12",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD2 - 3 - Free Flow 12.flac",
+    audioFile: "Wave IV - Adventure/CD2 - 3 - Free Flow 12.mp3",
     summary:
       "Open, unstructured exploration of Focus 12, consolidating your expanded-awareness skills and discovering what the state holds for you.",
     technique: [
@@ -690,7 +690,7 @@ export const TAPES: Tape[] = [
     title: "NVC I — Non-Verbal Communication",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD2 - 4 - NVC I.flac",
+    audioFile: "Wave IV - Adventure/CD2 - 4 - NVC I.mp3",
     summary:
       "Introduction to communication beyond words — receiving and sending whole meanings, feelings, and knowings directly, without language.",
     technique: [
@@ -718,7 +718,7 @@ export const TAPES: Tape[] = [
     title: "NVC II — Non-Verbal Communication",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD3 - 5 - NVC II.flac",
+    audioFile: "Wave IV - Adventure/CD3 - 5 - NVC II.mp3",
     summary:
       "Deepening non-verbal communication — clearer, richer exchanges and more confident sending and receiving of meaning beyond language.",
     technique: [
@@ -746,7 +746,7 @@ export const TAPES: Tape[] = [
     title: "Compoint (Conversion Point)",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave IV - Adventure/CD3 - 6 - Compoint.flac",
+    audioFile: "Wave IV - Adventure/CD3 - 6 - Compoint.mp3",
     summary:
       "Establishing your personal Conversion Point — a stable reference 'home base' in expanded awareness you can return to as an anchor for exploration.",
     technique: [
@@ -776,7 +776,7 @@ export const TAPES: Tape[] = [
     title: "Advanced Focus 12",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave V - Exploring Focus 15/CD1 - 1 - Advanced Focus 12.flac",
+    audioFile: "Wave V - Exploring Focus 15/CD1 - 1 - Advanced Focus 12.mp3",
     summary:
       "Strengthening and refining Focus 12 to a high degree of stability — the launch platform for entering the deeper state of Focus 15.",
     technique: [
@@ -804,7 +804,7 @@ export const TAPES: Tape[] = [
     title: "Discovering Intuition",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave V - Exploring Focus 15/CD1 - 2 - Discovering Intuition.flac",
+    audioFile: "Wave V - Exploring Focus 15/CD1 - 2 - Discovering Intuition.mp3",
     summary:
       "Awakening and recognizing your intuitive faculty — learning to notice the quiet inner signal and distinguish it from ordinary thought.",
     technique: [
@@ -832,7 +832,7 @@ export const TAPES: Tape[] = [
     title: "Exploring Intuition",
     focus: "Focus 12",
     duration: 35,
-    audioFile: "Wave V - Exploring Focus 15/CD2 - 3 - Exploring Intuition.flac",
+    audioFile: "Wave V - Exploring Focus 15/CD2 - 3 - Exploring Intuition.mp3",
     summary:
       "Putting intuition to work — actively using your intuitive sense to gather information and guidance with growing confidence.",
     technique: [
@@ -860,7 +860,7 @@ export const TAPES: Tape[] = [
     title: "Introduction to Focus 15",
     focus: "Focus 15 — The State of No Time",
     duration: 40,
-    audioFile: "Wave V - Exploring Focus 15/CD2 - 4 - Intro to Focus 15.flac",
+    audioFile: "Wave V - Exploring Focus 15/CD2 - 4 - Intro to Focus 15.mp3",
     summary:
       "Entering Focus 15 — a deep, still state beyond the sense of time, often described as pure consciousness in the void. A landmark of the program.",
     technique: [
@@ -889,7 +889,7 @@ export const TAPES: Tape[] = [
     focus: "Focus 15",
     duration: 40,
     audioFile:
-      "Wave V - Exploring Focus 15/CD3 - 5 - Mission 15 Creation and Manifestation.flac",
+      "Wave V - Exploring Focus 15/CD3 - 5 - Mission 15 Creation and Manifestation.mp3",
     summary:
       "Using the timeless state of Focus 15 for powerful creation and manifestation — planting intentions in a place unbounded by time.",
     technique: [
@@ -917,7 +917,7 @@ export const TAPES: Tape[] = [
     title: "Exploring Focus 15",
     focus: "Focus 15",
     duration: 40,
-    audioFile: "Wave V - Exploring Focus 15/CD3 - 6 - Exploring Focus 15.flac",
+    audioFile: "Wave V - Exploring Focus 15/CD3 - 6 - Exploring Focus 15.mp3",
     summary:
       "Free exploration of the timeless state — discovering what Focus 15 uniquely offers you: deep insight, healing, creativity, and stillness.",
     technique: [
@@ -947,7 +947,7 @@ export const TAPES: Tape[] = [
     title: "Sensing Locale I",
     focus: "Focus 12 / 15",
     duration: 40,
-    audioFile: "Wave VI - Odyssey/CD1 - 1 - Sensing Locale 1.flac",
+    audioFile: "Wave VI - Odyssey/CD1 - 1 - Sensing Locale 1.mp3",
     summary:
       "Learning to perceive Locale I — the non-physical 'here and now', the energetic layer overlapping ordinary physical reality.",
     technique: [
@@ -975,7 +975,7 @@ export const TAPES: Tape[] = [
     title: "Expansion in Locale I",
     focus: "Focus 15 / 21",
     duration: 40,
-    audioFile: "Wave VI - Odyssey/CD1 - 2 - Expansion in Locale 1.flac",
+    audioFile: "Wave VI - Odyssey/CD1 - 2 - Expansion in Locale 1.mp3",
     summary:
       "Extending your reach within Locale I — moving awareness farther out to perceive distant places and presences in the non-physical here-and-now.",
     technique: [
@@ -1003,7 +1003,7 @@ export const TAPES: Tape[] = [
     title: "Point of Departure",
     focus: "Focus 21",
     duration: 40,
-    audioFile: "Wave VI - Odyssey/CD2 - 3 - Point of Departure.flac",
+    audioFile: "Wave VI - Odyssey/CD2 - 3 - Point of Departure.mp3",
     summary:
       "Establishing the jumping-off point for travel beyond Locale I — preparing to move from physical reality toward Focus 21 and other energy systems.",
     technique: [
@@ -1031,7 +1031,7 @@ export const TAPES: Tape[] = [
     title: "Non-Physical Friends",
     focus: "Focus 21",
     duration: 40,
-    audioFile: "Wave VI - Odyssey/CD2 - 4 - Nonphysical friends.flac",
+    audioFile: "Wave VI - Odyssey/CD2 - 4 - Nonphysical friends.mp3",
     summary:
       "Meeting helpers, guides, and non-physical friends. You open to contact with benevolent intelligences who can accompany and assist you.",
     technique: [
@@ -1060,7 +1060,7 @@ export const TAPES: Tape[] = [
     focus: "Focus 21 — The Bridge",
     duration: 45,
     audioFile:
-      "Wave VI - Odyssey/CD3 - 5 - Movement to Locale 2 - Intro Focus 21.flac",
+      "Wave VI - Odyssey/CD3 - 5 - Movement to Locale 2 - Intro Focus 21.mp3",
     summary:
       "Crossing into Locale II and formally entering Focus 21 — the bridge to other energy systems and realities beyond physical existence.",
     technique: [
@@ -1088,7 +1088,7 @@ export const TAPES: Tape[] = [
     title: "Free Flow Journey in Focus 21",
     focus: "Focus 21",
     duration: 45,
-    audioFile: "Wave VI - Odyssey/CD3 - 6 - Free Flow Journey in Focus 21.flac",
+    audioFile: "Wave VI - Odyssey/CD3 - 6 - Free Flow Journey in Focus 21.mp3",
     summary:
       "Open exploration in Focus 21 — your first free journeys across the bridge, consolidating everything in Wave VI.",
     technique: [
@@ -1118,7 +1118,7 @@ export const TAPES: Tape[] = [
     title: "Introduction to Focus 23",
     focus: "Focus 23 — The Recently Departed",
     duration: 45,
-    audioFile: "Wave VII - Voyager/CD1 - 2 - Intro Focus 23.flac",
+    audioFile: "Wave VII - Voyager/CD1 - 2 - Intro Focus 23.mp3",
     summary:
       "Entering Focus 23 — a region inhabited by those who have recently left physical life but have not yet fully moved on, often unaware of their state.",
     technique: [
@@ -1146,7 +1146,7 @@ export const TAPES: Tape[] = [
     title: "Introduction to Focus 25",
     focus: "Focus 25 — The Belief System Territories",
     duration: 45,
-    audioFile: "Wave VII - Voyager/CD2 - 3 - Intro Focus 25.flac",
+    audioFile: "Wave VII - Voyager/CD2 - 3 - Intro Focus 25.mp3",
     summary:
       "Exploring Focus 25 — the belief system territories, vast realms shaped and inhabited according to the beliefs people held in physical life.",
     technique: [
@@ -1176,7 +1176,7 @@ export const TAPES: Tape[] = [
     title: "Special Tour (Focus 27 — The Park)",
     focus: "Focus 27 — The Reception Center",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_1_Special_Tour.flac",
+    audioFile: "Wave VIII - Union/CD_1_Special_Tour.mp3",
     summary:
       "Arrival at Focus 27 — 'the Park' or Reception Center, a human-made waystation where consciousness transitions and prepares. This tape gives you the orienting tour.",
     technique: [
@@ -1204,7 +1204,7 @@ export const TAPES: Tape[] = [
     title: "Meeting with the Entry Director",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_2_Meeting_with_the_Entry_Director.flac",
+    audioFile: "Wave VIII - Union/CD_2_Meeting_with_the_Entry_Director.mp3",
     summary:
       "Meeting the Entry Director — the guiding intelligence who oversees arrivals at the Reception Center and can orient you within Focus 27.",
     technique: [
@@ -1232,7 +1232,7 @@ export const TAPES: Tape[] = [
     title: "Educational Opportunities",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_3_Educational_Opportunities.flac",
+    audioFile: "Wave VIII - Union/CD_3_Educational_Opportunities.mp3",
     summary:
       "Visiting the centers of learning within Focus 27 — places where knowledge and wisdom from across systems can be accessed and studied.",
     technique: [
@@ -1260,7 +1260,7 @@ export const TAPES: Tape[] = [
     title: "Healing and Regeneration Center",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_4_Healing_and_Regeneration_Center.flac",
+    audioFile: "Wave VIII - Union/CD_4_Healing_and_Regeneration_Center.mp3",
     summary:
       "Visiting the Healing and Regeneration Center of Focus 27 — a place to receive and learn deep healing for body, mind, and spirit.",
     technique: [
@@ -1288,7 +1288,7 @@ export const TAPES: Tape[] = [
     title: "Planning Center",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_5_Planning_Center.flac",
+    audioFile: "Wave VIII - Union/CD_5_Planning_Center.mp3",
     summary:
       "Visiting the Planning Center — where life direction, purpose, and future possibilities can be examined and shaped with guidance.",
     technique: [
@@ -1316,7 +1316,7 @@ export const TAPES: Tape[] = [
     title: "Coordination Area",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_6_Coordination_Area.flac",
+    audioFile: "Wave VIII - Union/CD_6_Coordination_Area.mp3",
     summary:
       "Exploring the Coordination Area of Focus 27 — where activities across centers and systems are organized, and where larger patterns become visible.",
     technique: [
@@ -1344,7 +1344,7 @@ export const TAPES: Tape[] = [
     title: "Inner Earth",
     focus: "Focus 27",
     duration: 50,
-    audioFile: "Wave VIII - Union/CD_7_Inner_Earth.flac",
+    audioFile: "Wave VIII - Union/CD_7_Inner_Earth.mp3",
     summary:
       "A journey to the Inner Earth — a deep exploration connecting you with the living energy and consciousness of the planet itself.",
     technique: [
@@ -1372,7 +1372,7 @@ export const TAPES: Tape[] = [
     title: "The Absolute",
     focus: "Focus 27 → Beyond",
     duration: 55,
-    audioFile: "Wave VIII - Union/CD_8_The_Absolute.flac",
+    audioFile: "Wave VIII - Union/CD_8_The_Absolute.mp3",
     summary:
       "The culmination of the entire program — an opening toward union with the Absolute, the source and totality of all consciousness.",
     technique: [
