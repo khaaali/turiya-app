@@ -2,21 +2,21 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { Tape } from "./tapes";
+import { APP_CONFIG } from "./config";
 
 // Audio source configuration.
 // Resolution order for a tape's playable URL:
 //   1. A per-tape override URL (set in the Audio settings page) — for unique
 //      streaming links / signed URLs.
 //   2. A global base URL (set in settings) joined with the tape's file path.
-//   3. The build-time env base NEXT_PUBLIC_AUDIO_BASE, joined the same way.
+//   3. Static APP_CONFIG.audioBaseUrl (checked into git).
 //   4. The local /audio/<path> fallback (files dropped into public/audio).
-// Everything is stored locally in the browser so links survive reloads and
-// can be exported/imported.
+// Per-tape overrides and user base URL are stored in localStorage.
 
 const KEY = "turiya-audio-v1";
 const EVT = "turiya-audio-change";
 
-const ENV_BASE = (process.env.NEXT_PUBLIC_AUDIO_BASE || "").replace(/\/+$/, "");
+const CONFIG_BASE = (APP_CONFIG.audioBaseUrl || "").replace(/\/+$/, "");
 
 export type AudioConfig = {
   baseUrl: string; // optional; joined with tape.audioFile
@@ -71,8 +71,8 @@ export function resolveAudioUrl(tape: Tape, c: AudioConfig): Resolved {
   if (userBase) {
     return { url: `${userBase}/${encodePath(tape.audioFile)}`, source: "base" };
   }
-  if (ENV_BASE) {
-    return { url: `${ENV_BASE}/${encodePath(tape.audioFile)}`, source: "env" };
+  if (CONFIG_BASE) {
+    return { url: `${CONFIG_BASE}/${encodePath(tape.audioFile)}`, source: "env" };
   }
   return { url: `/audio/${encodePath(tape.audioFile)}`, source: "local" };
 }
@@ -134,7 +134,7 @@ export function useAudioConfig() {
   return {
     config,
     ready,
-    envBase: ENV_BASE,
+    envBase: CONFIG_BASE,
     setBaseUrl,
     setOverride,
     replaceConfig,
