@@ -1,6 +1,6 @@
 // Static app configuration — commit to git, available on all devices/deployments
 export const APP_CONFIG = {
-  audioBaseUrl: "https://pub-7ee62e1d09e7.r2.dev/turiyaapp",
+  audioBaseUrl: "https://pub-48e126480aac4d3f8fa1658d5c3cfa66.r2.dev",
   appName: "Turīya",
   version: "1.0.0",
 };
